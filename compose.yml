@@ -1,0 +1,8 @@
+services:
+  alfarobi_ws:
+    image: alfarobi_ws
+    container_name: alfarobi_ws
+    #devices:
+      #- /dev/ttyUSB0:/dev/ttyUSB0
+    volumes:
+      - ./src:/home/alfarobi/alfarobi_ws/src
