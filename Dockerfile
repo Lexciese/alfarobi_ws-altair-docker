@@ -11,8 +11,7 @@ RUN apt-get update && \
 # ------------[ ROS21 Kinetic INSTALLATION ]------------
 
 RUN apt-get update && \
-    apt-get install -y software-properties-common curl && \
-    add-apt-repository universe
+    apt-get install -y software-properties-common curl
     
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -34,8 +33,8 @@ RUN apt-get update && \
     rm /etc/ros/rosdep/sources.list.d/20-default.list
     
 # ------------[Alfarobi Project Dependencies]------------------
-RUN apt update && \
-    apt install -y ros-kinetic-gazebo-* \
+RUN apt-get update && \
+    apt-get install -y ros-kinetic-gazebo-* \
     ros-kinetic-qt-gui \
     ros-kinetic-qt-ros \
     ros-kinetic-qt-build \
@@ -45,7 +44,10 @@ RUN apt update && \
     libv4l-dev \
     ros-kinetic-tf2-eigen \
     libgl1-mesa-glx \
-    libgl1-mesa-dri
+    libgl1-mesa-dri \
+    ros-kinetic-effort-controllers \
+    ros-kinetic-ros-control \
+    ros-kinetic-ros-controllers
     
 
 RUN rosdep init && \
