@@ -18,6 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-kinetic-desktop \
     && rm -rf /var/lib/apt/lists/*
 
+RUN add-apt-repository ppa:levi-armstrong/qt-libraries-xenial -y \
+    apt update
+
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
     build-essential \
@@ -47,7 +50,9 @@ RUN apt-get update && \
     libgl1-mesa-dri \
     ros-kinetic-effort-controllers \
     ros-kinetic-ros-control \
-    ros-kinetic-ros-controllers
+    ros-kinetic-ros-controllers \
+    qt57-meta \
+    qt59-meta
     
 
 RUN rosdep init && \
@@ -67,8 +72,8 @@ RUN apt-get update && \
 
 #RUN python setup.py install
 
-RUN mkdir /home/alfarobi/
-WORKDIR /home/alfarobi/
+RUN mkdir /home/altair/
+WORKDIR /home/altair/
 
 #RUN rm -rf /DynamixelSDK && \
 #    apt-get remove -y git
