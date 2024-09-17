@@ -5,8 +5,9 @@ services:
     privileged: true
     volumes:
       - ./src:/home/altair/alfarobi_ws/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - QT_X11_NO_MITSHM=1
-      - DISPLAY=:0
+      - DISPLAY
     ipc: "host"
     network: "host"
