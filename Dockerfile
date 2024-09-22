@@ -134,8 +134,8 @@ RUN cd /opencv/build && make -j4 && make install
 RUN mkdir /home/alfarobi/
 WORKDIR /home/alfarobi/
 
-#RUN rm -rf /DynamixelSDK && \
-#    apt-get remove -y git
+RUN apt install -y mesa-utils
+RUN pip install pyserial
     
 
 # ------------[ BASH SETUP ]------------
